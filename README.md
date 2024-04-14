@@ -1,7 +1,7 @@
 ### Sharding based on user id
 
 There is only 2 databases.
-If user ID mod 2 == 1 then choose database 1 other wise use database 2
+If user ID%2 == 0 then choose database 1 other wise use database 2
 
 ## How to run
 
