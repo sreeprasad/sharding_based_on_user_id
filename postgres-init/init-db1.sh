@@ -1,7 +1,6 @@
 #!/bin/bash
 set -e
 
-# Connecting to the default 'postgres' database to perform operations
 psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "postgres" <<-EOSQL
     DO \$\$
     BEGIN
