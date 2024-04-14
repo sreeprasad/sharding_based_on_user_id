@@ -11,7 +11,7 @@ services:
       - "5435:5432"
     volumes:
       - db1_data:/var/lib/postgresql/data
-      - ./postgres-init/init-db1.sh:/docker-entrypoint-initdb.d/init-db1.sh # Correct script for db1
+      - ./postgres-init/init-db1.sh:/docker-entrypoint-initdb.d/init-db1.sh
 
   db2:
     image: postgres:latest
@@ -23,7 +23,7 @@ services:
       - "5433:5432"
     volumes:
       - db2_data:/var/lib/postgresql/data
-      - ./postgres-init/init-db2.sh:/docker-entrypoint-initdb.d/init-db2.sh # Correct script for db2, assuming you have it
+      - ./postgres-init/init-db2.sh:/docker-entrypoint-initdb.d/init-db2.sh
 
 volumes:
   db1_data:
