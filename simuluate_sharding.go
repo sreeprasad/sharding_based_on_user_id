@@ -25,8 +25,7 @@ func main() {
 	}
 	defer db2.Close()
 
-	// Example user ID
-	userID := 5 // You would typically get this from a request
+	userID := 5
 
 	var db *sql.DB
 	if userID%2 == 0 {
@@ -37,7 +36,6 @@ func main() {
 		fmt.Println("Using database 2")
 	}
 
-	// Example query
 	if _, err := db.Exec("CREATE TABLE IF NOT EXISTS example (id serial PRIMARY KEY, name VARCHAR(50))"); err != nil {
 		log.Fatalf("Could not create table: %v", err)
 	}
