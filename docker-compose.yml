@@ -1,26 +1,29 @@
-version: "3.8"
+version: "3.7"
+
 services:
   db1:
-    image: postgres:15
+    image: postgres:latest
     environment:
-      POSTGRES_DB: mydatabase
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydatabase4
+      POSTGRES_USER: user4
+      POSTGRES_PASSWORD: password4
     ports:
-      - "5432:5432"
+      - "5435:5432"
     volumes:
       - db1_data:/var/lib/postgresql/data
+      - ./postgres-init/init-db1.sh:/docker-entrypoint-initdb.d/init-db1.sh # Correct script for db1
 
   db2:
-    image: postgres:15
+    image: postgres:latest
     environment:
-      POSTGRES_DB: mydatabase
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydatabase5
+      POSTGRES_USER: user5
+      POSTGRES_PASSWORD: password5
     ports:
       - "5433:5432"
     volumes:
       - db2_data:/var/lib/postgresql/data
+      - ./postgres-init/init-db2.sh:/docker-entrypoint-initdb.d/init-db2.sh # Correct script for db2, assuming you have it
 
 volumes:
   db1_data:
