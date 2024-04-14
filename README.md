@@ -5,6 +5,12 @@ If user ID%2 == 0 then choose database 1 other wise use database 2
 
 ## How to run
 
+Give permission to postgres-init to execute script to create users
+
+```shell
+chmod +x ./postgres-init/*.sh
+```
+
 start the docker to run the 2 postgres databases
 
 ```shell
